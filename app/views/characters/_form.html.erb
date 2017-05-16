@@ -1,0 +1,34 @@
+<%= render 'shared/errors', obj: @article %>
+
+<div class='row'>
+  <div class='col-xs-12'>
+    </div>
+    <%= form_for(@article, :html => {class: 'form-horizontal', role: 'form'}) do |f| %>
+        <div class='form-group'>
+          <div class='control-label col-sm-2'>
+            <%= f.label :name %>
+          </div>
+          <div class='col-sm-8'>
+            <%= f.text_field :name, class: 'form-control', placeholder: 'Name of Character', autofocus: true %>
+          </div>
+        </div>
+        <div class='form-group'>
+          <div class='control-label col-sm-2'>
+            <%= f.label :description %>
+          </div>
+          <div class='col-sm-8'>
+            <%= f.text_area :description, rows:5, class: 'form-control', placeholder: 'Character Description', autofocus: true %>
+          </div>
+        </div>
+        <div class='form-group'>
+          <div class='col-sm-offset-2 col-sm-10'>
+            <%= f.submit class: 'btn btn-primary btn-lrg'%>
+          </div>
+        </div>
+    <% end %>
+
+    <div class='center'>
+      <%= link_to "Cancel Changes and Return to All Characters", articles_path %>
+    </div>
+  </div>
+</div>
