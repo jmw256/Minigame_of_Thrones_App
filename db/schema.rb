@@ -11,13 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170513172544) do
+ActiveRecord::Schema.define(version: 20170523155032) do
 
   create_table "characters", force: :cascade do |t|
     t.string "name"
     t.text   "description"
     t.text   "image"
     t.text   "tag"
+  end
+
+  create_table "teams", force: :cascade do |t|
+    t.string "name"
+    t.text   "description"
+    t.text   "image"
+    t.text   "owner"
+    t.text   "league"
   end
 
   create_table "users", force: :cascade do |t|
